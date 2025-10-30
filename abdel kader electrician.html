@@ -2,188 +2,809 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    
-    <link rel="icon" href="favicon.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdel Kader Electricien</title>
-
-    <!-- تضمين FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <title>CV - Abdel Kader Ben Mokrane</title>
+    <link rel="icon" href="https://yacne.github.io/abdel-kader/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffff;
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* شريط التنقل */
-        nav {
-            background-color: #2C2C2C;
-            color: #fff;
-            padding: 5px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 25px 0;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            border: 5px solid var(--light-color);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+            background-color: white;
+        }
+
+        .name-title h1 {
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+        }
+
+        .name-title h2 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .contact-item i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 25px;
+        }
+
+        .sidebar, .content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
             display: flex;
             align-items: center;
         }
 
-        nav img {
-            width: 10%;
-            margin-right: 20px;
+        .section-title i {
+            margin-right: 10px;
         }
 
-        nav h1 {
-            color: #00AFFF;
-            margin: 0;
-            font-size: 1.2rem;
+        .info-item {
+            margin-bottom: 15px;
         }
 
-        /* محتوى الصفحة */
-        .container {
-            text-align: center;
-            margin-top: 50px;
+        .info-item h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
         }
 
-        h2 {
-            font-size: 1.2rem;
-            color: #0064C7;
+        .profile-with-photo {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        p {
-            color: #333;
+        .personal-photo {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* مربعات الخدمات */
-        .services {
+        .personal-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .profile-text {
+            width: 100%;
+        }
+
+        .profile-text p {
+            margin-bottom: 15px;
+        }
+
+        .international-work {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+            margin-top: 15px;
+        }
+
+        .skills {
             display: flex;
             flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .skill {
+            background-color: var(--light-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .lang-level {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .level-bar {
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .level-fill {
+            height: 100%;
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+        }
+
+        .social-links {
+            display: flex;
             justify-content: center;
-            border-radius: 10px;
-            margin: 20px 0;
+            gap: 15px;
+            margin-top: 20px;
         }
 
-        .service-box {
-            width: 90%;
-            height: 35vh;
-            border: 1px solid #fff;
-            border-radius: 10px;
-            margin: 10px;
-            position: relative;
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
-        .service-box img {
-            border-radius: 10px 10px 0 0;
-            width: 100%;
-            height: 75%;
-            object-fit: cover;
+        .social-link:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
         }
 
-        .service-box h3 {
+        .experience-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .exp-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .exp-date {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .exp-description {
+            color: #555;
+        }
+
+        .physical-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .physical-item {
+            background-color: var(--light-color);
+            padding: 12px;
+            border-radius: 8px;
             text-align: center;
-            border-radius: 0 0 10px 10px;
-            margin: 0;
-            padding: 10px 0;
-            background-color: #2C2C2C;
-            color: #fff;
-            font-size: 1rem;
         }
-/* معلومات الاتصال */
-.contact-info {
-    background-color: #008ED0;
-    color: white;
-    text-align: center;
-    padding: 1px;
-    margin-top: 20px;
-}
 
-/* جعل الأيقونات في صف واحد */
-.contact-info p {
-    color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* مساحة بين الأيقونات */
-    font-size: 2rem;
-    margin: 10px 0;
-}
+        .physical-item i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+        }
 
-.contact-info a {
-    color: #FFFFFF;
-    font-size: 2rem;
-    text-decoration: none;
-}
+        .physical-item span {
+            display: block;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
 
-.contact-info h3 {
-    color: #FFFFFF;
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
+        .custom-footer {
+            text-align: center;
+            padding: 25px 10px;
+            margin-top: 40px;
+            color: #2c3e50;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-top: 2px solid var(--secondary-color);
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+        }
+
+        .facebook-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #3b5998;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .facebook-btn:hover {
+            background-color: #2d4373;
+            transform: translateY(-2px);
+        }
+
+        .facebook-btn i {
+            margin-right: 8px;
+        }
+
+        .partners {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+            align-items: center;
+        }
+
+        .partner-item {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--primary-color);
+            border: 1px solid #dee2e6;
+        }
+
+        .excellence-badge {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #8b6914;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 5px;
+            border: 2px solid #ffc107;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animated {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        /* تحسينات للهواتف */
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile {
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
+            
+            .logo {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header {
+                padding: 20px 0;
+                margin-bottom: 20px;
+            }
+            
+            .name-title h1 {
+                font-size: 1.8rem;
+            }
+            
+            .name-title h2 {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.2rem;
+            }
+            
+            .sidebar, .content {
+                padding: 15px;
+            }
+            
+            .contact-info {
+                padding: 12px;
+            }
+            
+            .physical-info {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .partners {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .name-title h1 {
+                font-size: 1.6rem;
+            }
+            
+            .name-title h2 {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.1rem;
+            }
+            
+            .contact-item {
+                font-size: 0.9rem;
+            }
+            
+            .skills {
+                gap: 8px;
+            }
+            
+            .skill {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
+            
+            .physical-info {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            
+            .physical-item {
+                padding: 10px;
+            }
+            
+            .custom-footer {
+                font-size: 1rem;
+                padding: 20px 10px;
+            }
+            
+            .partner-item {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .name-title h1 {
+                font-size: 1.4rem;
+            }
+            
+            .name-title h2 {
+                font-size: 1rem;
+            }
+            
+            .contact-info {
+                min-width: 100%;
+            }
+            
+            .physical-info {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-
-    <!-- شريط التنقل -->
-    <nav>
-        <img src="logo.png" alt="Logo">
-        <h1>Abdel Kader Ben Mokrane - Electricien</h1>
-    </nav>
-
-    <!-- محتوى الصفحة -->
     <div class="container">
-        <h2>Bienvenue sur la page d'Abdel Kader Ben Mokrane</h2>
-        <p>Nous vous présentons ici les services d'électricité offerts par Abdel Kader, un expert en électricité avec des années d'expérience dans le domaine.</p>
+        <header>
+            <div class="header-content">
+                <div class="profile">
+                    <div class="logo">
+                        <img src="https://yacne.github.io/abdel-kader/logo.png" alt="Logo Abdel Kader Ben Mokrane">
+                    </div>
+                    <div class="name-title">
+                        <h1>ABDEL KADER BEN MOKRANE</h1>
+                        <h2>Électricien du bâtiment professionnel</h2>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Sidi Sohbi/City 158 - Bloc 4 ->"3", 46300 Beni Saf</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>bypro2023@outlook.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>0668714127</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Date de naissance: 23 octobre 1974</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-id-card"></i>
+                        <span>Permis de conduire: A-B-C</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="section">
+                    <h2 class="section-title"><i class="fas fa-user"></i> PROFIL PERSONNEL</h2>
+                    <div class="profile-with-photo">
+                        <div class="personal-photo">
+                            <img src="ABK.jpg" alt="Photo personnelle de Abdel Kader Ben Mokrane">
+                        </div>
+                        <div class="profile-text">
+                            <p>Électricien professionnel spécialisé dans l'installation des réseaux électriques pour bâtiments, caméras de surveillance, systèmes d'alarme et réseaux internet.</p>
+                            
+                            <div class="international-work">
+                                <p><strong>Capacité à travailler dans des zones géographiques importantes comme la France avec des entreprises et institutions.</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title"><i class="fas fa-graduation-cap"></i> FORMATION</h2>
+                    <div class="info-item">
+                        <h3>Diplôme Universitaire</h3>
+                        <p>Génie Mécanique - Réparation des moteurs de navires</p>
+                        <p>Spécialisation en mécanique navale</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Baccalauréat Technique</h3>
+                        <p>Juin 1994 - Spécialité Mécanique</p>
+                        <div class="excellence-badge">
+                            Mention Excellent - 19/20 - Classé parmi les premiers nationaux
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title"><i class="fas fa-language"></i> LANGUES</h2>
+                    <div class="lang-level">
+                        <span>Arabe</span>
+                        <span>Courant</span>
+                    </div>
+                    <div class="level-bar">
+                        <div class="level-fill" style="width: 95%"></div>
+                    </div>
+                    
+                    <div class="lang-level">
+                        <span>Français</span>
+                        <span>Courant</span>
+                    </div>
+                    <div class="level-bar">
+                        <div class="level-fill" style="width: 90%"></div>
+                    </div>
+                    
+                    <div class="lang-level">
+                        <span>Anglais</span>
+                        <span>Intermédiaire</span>
+                    </div>
+                    <div class="level-bar">
+                        <div class="level-fill" style="width: 60%"></div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title"><i class="fas fa-certificate"></i> CERTIFICATS</h2>
+                    <div class="info-item">
+                        <h3>Baccalauréat Technique</h3>
+                        <p>Juin 1994 - Spécialité Mécanique</p>
+                        <div class="excellence-badge">
+                            Mention Excellent - Classé national
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title"><i class="fas fa-user-circle"></i> INFORMATIONS PHYSIQUES</h2>
+                    <div class="physical-info">
+                        <div class="physical-item">
+                            <i class="fas fa-ruler-vertical"></i>
+                            <span>1,74 m</span>
+                        </div>
+                        <div class="physical-item">
+                            <i class="fas fa-weight"></i>
+                            <span>80 kg</span>
+                        </div>
+                        <div class="physical-item">
+                            <i class="fas fa-eye"></i>
+                            <span>Noisette</span>
+                        </div>
+                        <div class="physical-item">
+                            <i class="fas fa-user"></i>
+                            <span>Modérée</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.facebook.com/abdelkader.benmokrane.777" class="social-link" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="mailto:bypro2023@outlook.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:0668714127" class="social-link">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="section">
+                    <h2 class="section-title"><i class="fas fa-briefcase"></i> EXPÉRIENCE PROFESSIONNELLE</h2>
+                    <div class="experience-item">
+                        <div class="exp-title">Électricien du bâtiment indépendant</div>
+                        <div class="exp-date">Beni Saf et région</div>
+                        <div class="exp-description">
+                            <p>Spécialisé dans l'installation des réseaux électriques pour bâtiments résidentiels et commerciaux, systèmes de caméras de surveillance, alarmes et réseaux internet.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="exp-title">Expérience universitaire - ECORAP</div>
+                        <div class="exp-date">Période universitaire - Beni Saf</div>
+                        <div class="exp-description">
+                            <p>Application pratique du spécialité Génie Mécanique dans le domaine de la réparation des moteurs de navires.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title"><i class="fas fa-handshake"></i> PARTENAIRES INDUSTRIELS</h2>
+                    <div class="info-item">
+                        <p>Expérience de collaboration avec des entreprises leaders dans le domaine de l'électricité :</p>
+                        <div class="partners">
+                            <div class="partner-item">Legrand</div>
+                            <div class="partner-item">Gamix</div>
+                            <div class="partner-item">Schneider Electric</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title"><i class="fas fa-cogs"></i> COMPÉTENCES PROFESSIONNELLES</h2>
+                    <div class="skills">
+                        <div class="skill">Installation réseaux électriques</div>
+                        <div class="skill">Caméras de surveillance</div>
+                        <div class="skill">Systèmes d'alarme</div>
+                        <div class="skill">Réseaux internet</div>
+                        <div class="skill">Électricité domestique</div>
+                        <div class="skill">Électricité industrielle</div>
+                        <div class="skill">Sécurité électrique</div>
+                        <div class="skill">Gestion de projets</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title"><i class="fas fa-info-circle"></i> INFORMATIONS PERSONNELLES</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <h3>Lieu de naissance</h3>
+                            <p>Beni Saf - Aïn Témouchent</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Sexe</h3>
+                            <p>Homme</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Nationalité</h3>
+                            <p>Algérienne</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>État civil</h3>
+                            <p>Marié</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title"><i class="fas fa-link"></i> RÉFÉRENCES</h2>
+                    <div class="info-item">
+                        <h3>Électricien professionnel</h3>
+                        <p>Installation réseaux électriques, caméras surveillance et alarmes</p>
+                        <p>Téléphone: 0668714127</p>
+                        <p>Email: bypro2023@outlook.com</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title"><i class="fas fa-images"></i> CONTACT ET RÉALISATIONS</h2>
+                    <div class="info-item">
+                        <p>Page Facebook pour communication et consultation de certains travaux :</p>
+                        <a href="https://www.facebook.com/abdelkader.benmokrane.777" target="_blank" class="facebook-btn">
+                            <i class="fab fa-facebook-f"></i> Me contacter sur Facebook
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="custom-footer">
+            <p>Conçu par mon fils</p>
+        </div>
     </div>
 
-    <!-- مربعات الخدمات -->
-    <div class="services">
-        <div class="service-box">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI2790xyoW-ERG0K1ZvP9b5Xj0pxeBsEFmYODxdY6sfw&s" alt="Electricité Architecturale">
-            <h3>Électricité Architecturale</h3>
-        </div>
-        <div class="service-box">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtLE12mPzJZVkfn2iiFQKahjN6RhxxiZ0p51xtDxfOLw&s" alt="Éclairage de Rue et de Bâtiments">
-            <h3>Éclairage de Rue et de Bâtiments</h3>
-        </div>
-        <div class="service-box">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_roVDJydanbA7WVpPMRufNifPTny-0wf3wGONwdp-Zw&s" alt="Connexion Internet et Réseau">
-            <h3>Connexion Internet et Réseau</h3>
-        </div>
-        <div class="service-box">
-            <img src="https://cdn.salla.sa/BnZB/lb3DEN8rmoRzH2Qe1bkfD82zIruMGD3pQPPX8ThY.png" alt="Installation de Caméras de Surveillance">
-            <h3>Installation de Caméras de Surveillance</h3>
-        </div>
-        <div class="service-box">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBAMPt3FTLHUy4JlbiVjKNGCGffcsYYnlvJrOh1-Q5cA&s" alt="Installation de Systèmes d'Alerte">
-            <h3>Installation de Systèmes d'Alerte</h3>
-        </div>
-        <div class="service-box">
-            <img src="https://img.fruugo.com/product/0/20/1043696200_0340_0340.jpg" alt="Serrures de Porte Intelligentes">
-            <h3>Serrures de Porte Intelligentes</h3>
-        </div>
-        <div class="service-box">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPdrRsSXz3zajWNCGvVaDCUPvAQIIrtUA0aKJF6HY7Og&s" alt="Équipements de Maison Intelligente">
-            <h3>Équipements de Maison Intelligente</h3>
-        </div>
-        <div class="service-box">
-            <img src="https://api2.aldiyaa.com/images/post/11202023104640.webp" alt="Maintenance et Réparations de Structure Électrique">
-            <h3>Maintenance et Réparations de Structure Électrique</h3>
-        </div>
-        <div class="service-box">
-            <img src="https://khamsat.hsoubcdn.com/images/services/488836/2645849f4819422e710abe9d761220de.jpg" alt="Plans de Répartition de Réseau Électrique Domiciliaire">
-            <h3>Plans de Répartition de Réseau Électrique Domiciliaire</h3>
-        </div>
-    </div>
+    <script>
+        // Animation au chargement de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.section, header');
+            elements.forEach((element, index) => {
+                element.classList.add('animated');
+                element.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
 
-<!-- معلومات الاتصال -->
-<div class="contact-info">
-    <h3>Contact</h3>
-    <p><i class="fas fa-phone"></i> +213 799 992 958</p>
-    <p>
+        // Effet de survol للصور الشخصية
+        const personalPhoto = document.querySelector('.personal-photo img');
+        if (personalPhoto) {
+            personalPhoto.addEventListener('mouseover', function() {
+                this.style.transform = 'scale(1.03)';
+            });
+            
+            personalPhoto.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1)';
+            });
+        }
 
-        <a href="https://www.facebook.com/abdelkader.benmokrane.777" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="mailto:bypro2023@outlook.com"><i class="fas fa-envelope"></i></a>
-    </p>
-</div>
+        // Effet de survol pour les compétences
+        const skills = document.querySelectorAll('.skill');
+        skills.forEach(skill => {
+            skill.addEventListener('mouseover', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 6px 12px rgba(0,0,0,0.15)';
+            });
+            
+            skill.addEventListener('mouseout', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
 
+        // Effet de survol pour les partenaires
+        const partners = document.querySelectorAll('.partner-item');
+        partners.forEach(partner => {
+            partner.addEventListener('mouseover', function() {
+                this.style.transform = 'translateY(-3px)';
+                this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+            });
+            
+            partner.addEventListener('mouseout', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+    </script>
 </body>
 </html>
